@@ -1,0 +1,15 @@
+h1{
+    background: linear-gradient(.25turn, #FF0033, 50%, white);
+    color: white;
+    text-shadow: 1px 0 10px navy;
+    font-style: italic;
+}
+
+body{
+    background-color: #FFFFF0
+}
+
+h2{
+    color: aqua;
+    text-shadow: 1px 0 10px navy;
+}
