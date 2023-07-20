@@ -1,44 +1,49 @@
 let kotae = Math.floor(Math.random()*10) + 1;
 console.log('答え (デバック用) : ' + kotae);
 
-let kaisu = 1;
+let kaisu = 0;
 
 hantei();
-hantei();
-hantei();
-hantei();
+
 
 
 
 function hantei() {
     
     let yoso = 4;
+    kaisu = kaisu + 1;
 
-    console.log(kaisu +  "回目の予想:" + yoso);
-
+   let span = document.querySelector('span#kaisu');
+   span.textContent = kaisu;
     if(kaisu < 3){
     
     if(kotae === yoso) {
-        console.log("正解です。おめでとう！");
+      let p = document.querySelector('p#result');
+        p.textContent = '正解です。おめでとう！';
       } else if(kotae > yoso){
-        console.log("まちがい．答えはもっと大きいですよ");
+        let p = document.querySelector('p#result');
+        p.textContent = 'まちがい．答えはもっと大きいですよ';
       } else if(kotae < yoso) {
-        console.log("まちがい．答えはもっと小さいですよ");
+        let p = document.querySelector('p#result');
+        p.textContent = 'まちがい．答えはもっと小さいですよ';
       }
     }
 
     else if(kaisu === 3){
         if(kotae === yoso) {
-            console.log("正解です。おめでとう！");
+          let p = document.querySelector('p#result');
+          p.textContent = '正解です。おめでとう！';
           } else if(kotae !== yoso){
-            console.log("まちがい。 残念でした答えは " + kotae + "です。");
+            let p = document.querySelector('p#result');
+            p.textContent = 'まちがい。 残念でした。答えは '  + kotae + 'です。';
           }
     }
     else if(kaisu > 3){
-        console.log("答えは " + kotae + "でした。すでにゲームは終わっています。");
+      let p = document.querySelector('p#result');
+      p.textContent = '答えは ' + kotae + 'でした。すでにゲームは終わっています。';
 
     }
-    kaisu = kaisu + 1;
+
 }
 
 
