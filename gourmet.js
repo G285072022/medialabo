@@ -214,13 +214,19 @@ for(let a of data.results.shop){
 ul = document.querySelector('ul#result');
 for(let a of data.results.shop){
   li = document.createElement('li');
-  li.textContent = a.access 
-  + a.address + 
-  a.budget.name + a.catch + a.genre.name + a.open + a.station_name + a.sub_genre.name;
+  li.textContent = a.access + a.address + a.budget.name + a.catch + a.genre.name + a.open + a.station_name + a.sub_genre.name;
   ul.insertAdjacentElement('beforeend', li);
 }
 
+let b = document.querySelector('#print');
+b.addEventListener('click', store);
 
+
+function store() {
+    let i = document.querySelector('input[name="storename"]');
+    let storename = i.value;      
+    console.log(storename);
+}
 
 
 
