@@ -201,6 +201,27 @@ let data = {
 
 /////////// 課題3-2 ここからプログラムを書こう
 for(let a of data.results.shop){
-  console.log(a.access + a.address + a.budget.name + a.catch + a.genre.name + a.open + a.station_name + a.sub_genre.name);
+  console.log(a.access);
+  console.log(a.address);
+  console.log(a.budget.name);
+  console.log(a.catch);
+  console.log(a.genre.name);
+  console.log(a.open);
+  console.log(a.station_name);
+  console.log(a.sub_genre.name);
 }
+
+ul = document.querySelector('ul#result');
+for(let a of data.results.shop){
+  li = document.createElement('li');
+  li.textContent = a.access 
+  + a.address + 
+  a.budget.name + a.catch + a.genre.name + a.open + a.station_name + a.sub_genre.name;
+  ul.insertAdjacentElement('beforeend', li);
+}
+
+
+
+
+
 
