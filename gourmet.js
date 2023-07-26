@@ -201,6 +201,6 @@ let data = {
 
 /////////// 課題3-2 ここからプログラムを書こう
 for(let a of data.results.shop){
-  console.log(a);
+  console.log(a.access + a.address + a.budget.name + a.catch + a.genre.name + a.open + a.station_name + a.sub_genre.name);
 }
 
