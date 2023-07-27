@@ -14,13 +14,36 @@ let data = [
 //// 注意: 以上は編集しないこと!
 
 // 練習4-2 メッセージ追加プログラム
+let h2 = document.querySelector('h2#ex42');
+let p = document.createElement('p');
+p.textContent = '写真表と都市の緯度経度のページです'; 
+p.setAttribute('style', "text-emphasis: sesame green");
+h2.insertAdjacentElement('afterend', p);
 
 
 // 練習4-3 写真表作成プログラム
+let photo = [{face:"taro.png"}, {face:"jiro.png"}, {face:"hanako.png"}] 
+div = document.querySelector('div#phototable');
+for (let pho of photo) {
+	let img = document.createElement('img');
+	img.setAttribute('src', pho.face);
+	p3 = document.createElement('p');
+	p3.insertAdjacentElement('beforeend', img);
+	div.insertAdjacentElement('beforeend', p3);
+  }
 
 
 // 練習4-4 箇条書き削除プログラム
-
+w = document.querySelectorAll('ul#location > li');
+for (let n of w) {
+	n.remove();
+  }
 
 // 練習4-5 箇条書き追加プログラム
+ul = document.querySelector('ul#location'); 
+for(let a of data){
+	li = document.createElement('li');
+	li.textContent = a.name+" ... 緯度:"+a.lat+", 経度:"+a.lng;
+	ul.insertAdjacentElement('beforeend', li);
+  }  
 
