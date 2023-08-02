@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <link rel="stylesheet"href="project.css">
         <script src="gourmet.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+
     </head>
     <body>
         <h1>グルメ情報</h1>
-        <label for="storename">お店の種類: </label>
-        <input type="text" name="storename" id="storename" size="10">
-        <button id="print">表示</button>
-        <ul id="result"></ul>
+        <p><label for="storename">お店の種類: </label>
+        <select name="storename" id="storename">
+            <option value="">お店の種類を選んでください！</option>
+                <option value="居酒屋">居酒屋</option>
+                <option value="ダイニングバー・バル">ダイニングバー・バル</option>
+                <option value="創作料理">創作料理</option>
+                <option value="和食">和食</option>
+                <option value="洋食">洋食</option>
+                <option value="イタリアン・フレンチ">イタリアン・フレンチ</option>
+                <option value="中華">中華</option>
+                <option value="焼肉・ホルモン">焼肉・ホルモン</option>
+                <option value="アジア・エスニック料理">アジア・エスニック料理</option>
+                <option value="各国料理">各国料理</option>
+                <option value="カラオケ・パーティ">カラオケ・パーティ</option>
+                <option value="バー・カクテル">バー・カクテル</option>
+                <option value="ラーメン">ラーメン</option>
+                <option value="カフェ・スイーツ">カフェ・スイーツ</option>
+                <option value="その他グルメ">その他のグルメ</option>
+                <option value="お好み焼き・もんじゃ">お好み焼き・もんじゃ</option>
+                <option value="韓国料理">韓国料理</option>
+        </select>
+
+        <button id="print">検索</button>
+        </p>
+        <ul id="result">
+        </ul>
     </body>
 </html>

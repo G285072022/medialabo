@@ -1,0 +1,15 @@
+body{
+    background-color: #FFFFF0
+}
+
+h1{
+    background: linear-gradient(.25turn, #FF0033, 50%, white);
+    color: white;
+    text-shadow: 1px 0 10px navy;
+    font-style: italic;
+}
+
+button{
+    background: rgb(0, 157, 255);
+    color :rgb(235, 255, 121)
+}

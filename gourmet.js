@@ -199,7 +199,79 @@ let data = {
   }
 };
 
-/////////// 課題3-2 ここからプログラムを書こう
+
+
+let b = document.querySelector('button#print');
+b.addEventListener('click', store);
+var select = document.getElementById("storename");
+select.options[0].selected = true;
+
+function store() {
+    let url;
+    let a = document.querySelector('select#storename');
+    let pass = a.selectedIndex;
+
+    if(pass === 1) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G001.json'
+    }
+    if(pass === 2) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G002.json'
+    }
+    if(pass === 3) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G003.json'
+    }
+    if(pass === 4) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G004.json'
+    }
+    if(pass === 5) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G005.json'
+    }
+    if(pass === 6) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G006.json'
+    }
+    if(pass === 7) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G007.json'
+    }
+    if(pass === 8) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G008.json'
+    }
+    if(pass === 9) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G009.json'
+    }
+    if(pass === 10) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G010.json'
+    }
+    if(pass === 11) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G011.json'
+    }
+    if(pass === 12) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G012.json'
+    }
+    if(pass === 13) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G013.json'
+    }
+    if(pass === 14) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G014.json'
+    }
+    if(pass === 15) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G015.json'
+    }
+    if(pass === 16) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G016.json'
+    }
+    if(pass === 17) {
+      url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G017.json'
+    }
+    axios.get(url).then(showResult).catch(showError).then(finish); 
+}
+
+
+function showResult(resp) {
+  let data = resp.data;
+  if (typeof data === 'string') {
+    data = JSON.parse(data);
+}
+
 for(let a of data.results.shop){
   console.log(a.access);
   console.log(a.address);
@@ -208,26 +280,23 @@ for(let a of data.results.shop){
   console.log(a.genre.name);
   console.log(a.open);
   console.log(a.station_name);
-  console.log(a.sub_genre.name);
+  
 }
 
 ul = document.querySelector('ul#result');
 for(let a of data.results.shop){
   li = document.createElement('li');
-  li.textContent = a.access + a.address + a.budget.name + a.catch + a.genre.name + a.open + a.station_name + a.sub_genre.name;
+  li.textContent = ("アクセス：" + a.access + "/住所：" + a.address + "/予算：" +a.budget.name + "/キャッチコピー" + a.catch + "/ジャンル" + a.genre.name + "/営業時間" +a.open + "/最寄駅" + a.station_name);
   ul.insertAdjacentElement('beforeend', li);
 }
 
-let b = document.querySelector('#print');
-b.addEventListener('click', store);
 
 
-function store() {
-    let i = document.querySelector('input[name="storename"]');
-    let storename = i.value;      
-    console.log(storename);
 }
-
-
-
+function showError(err) {
+    console.log(err);
+}
+function finish() {
+    console.log('Ajax 通信が終わりました');
+}
 
